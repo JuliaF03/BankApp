@@ -1,4 +1,5 @@
 from random import randint
+import runpy
 
 info =[]
 
@@ -22,6 +23,9 @@ def openAccount():
     userpasswd = input("Pick a password, it will be used to log in the account.\n")
     info.append(username)
     info.append(userpasswd)
+
+    db_script = r"D:\Programação\Python\database_connect.py"
+    runpy.run_path(path_name=db_script)
 
 def logAccount():
     username2 = input("Insert your username \n")
